@@ -15,14 +15,16 @@ const mutation = new GraphQLObjectType({
       resolve(parentValue, { email, password }, req) {
         AuthService.signup({ email, password, req });
       }
+    },
+    logout: {
+      type: UserType,
+      resolve(parentValue, args, req) {
+        const { user } = req;
+        req.logout();
+        return user;
+      }
     }
   }
 });
-
-mutation {
-  signup(email: "test@test.com", password: "password") {
-    email
-  }
-}
 
 module.exports = mutation;
