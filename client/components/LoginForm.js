@@ -1,9 +1,9 @@
 import React from 'react';
 import { graphql } from 'react-apollo';
+import { hashHistory } from 'react-router';
 import AuthForm from './AuthForm';
 import mutation from '../mutations/Login';
 import query from '../queries/CurrentUser';
-import { hashHistory } from 'react-router';
 
 class LoginForm extends React.Component {
   constructor(props) {
