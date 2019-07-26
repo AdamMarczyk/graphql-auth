@@ -8,7 +8,9 @@
   },
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js --ignore client"
+    "dev": "nodemon index.js --ignore client",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "author": "",
   "license": "ISC",
@@ -38,6 +40,8 @@
     "react-dom": "^15.4.2",
     "react-router": "^3.0.2",
     "webpack": "^2.2.0",
-    "webpack-dev-middleware": "^1.9.0"
-  }
+    "webpack-dev-middleware": "^1.9.0",
+    "snyk": "^1.199.2"
+  },
+  "snyk": true
 }
